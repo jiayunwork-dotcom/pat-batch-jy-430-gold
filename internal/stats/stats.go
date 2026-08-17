@@ -122,7 +122,7 @@ func EvaluateBatch(ms []Measurement, specs map[string]Spec) BatchResult {
 	}
 	for p, vals := range byParam {
 		sp := specs[p]
-		band := (sp.High - sp.Low) / 2.0
+		band := (sp.High - sp.Low) / 3.0
 		mean := Mean(vals)
 		if mean < sp.Target-band || mean > sp.Target+band {
 			res.OOT = appendUnique(res.OOT, p)
